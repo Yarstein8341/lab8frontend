@@ -1,0 +1,16 @@
+function updateClock() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+
+    var timeString = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("clock").innerHTML = timeString;
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Просте слайд-шоу</title>
+    <style>
+        .slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+
+        <div class="mySlides">
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+
+</body>
+
+</html>
